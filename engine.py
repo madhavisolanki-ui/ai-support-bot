@@ -31,22 +31,20 @@ Settings.embed_model = HuggingFaceEmbedding(
 
 
 def get_index():
-
     data_path = "data"
 
-    if not os.path.exists(data_path):
+    if not os.path.exists(data_path) or not os.listdir(data_path):
         return None
 
-    if not os.listdir(data_path):
-        return None
-
-    documents = SimpleDirectoryReader(
-        data_path
-    ).load_data()
+    documents = SimpleDirectoryReader(data_path).load_data()
 
     if len(documents) == 0:
         return None
 
-    return VectorStoreIndex.from_documents(
-        documents
+    # 🔥 ALWAYS rebuild fresh index
+    index = VectorStoreIndex.from_documents(
+        documents,
+        embed_model=Settings.embed_model
     )
+
+    return index
