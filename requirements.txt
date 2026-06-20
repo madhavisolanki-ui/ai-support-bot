@@ -1,0 +1,7 @@
+streamlit
+llama-index
+llama-index-vector-stores-faiss
+faiss-cpu
+groq
+python-dotenv
+pypdf
