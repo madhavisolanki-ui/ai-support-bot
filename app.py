@@ -4,7 +4,7 @@ from llama_index.core import Settings
 import engine
 import traceback
 
-st.write("Engine file:", engine.__file__)
+print("Engine file:", engine.__file__)
 
 # -----------------------------
 # Page Configuration
