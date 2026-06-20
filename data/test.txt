@@ -1,1 +1,18 @@
-Hii I am Madhavi Solanki
+IT SUPPORT POLICY AND FAQS
+
+1. PASSWORD RESET POLICY
+If you forget your password, please navigate to the login page and click 'Forgot Password'. A reset link will be sent to your registered official email address. If you do not receive the email within 10 minutes, contact the IT helpdesk at it-support@example.com.
+
+2. WI-FI CONNECTIVITY
+- Office Wi-Fi Name: Corporate_Secure
+- Password: Password123!
+- If you are unable to connect, please ensure your VPN is disconnected before attempting to join the Wi-Fi.
+
+3. HARDWARE ISSUES
+For any laptop or mouse malfunctions, please submit a hardware request ticket via the 'Internal Helpdesk Portal'. Replacement hardware is typically issued within 24 hours.
+
+4. REMOTE WORKING GUIDELINES
+All employees must use the company-approved VPN (GlobalProtect) when accessing internal servers from home. Please do not store sensitive company data on personal cloud storage (Google Drive/Dropbox personal accounts).
+
+5. SOFTWARE INSTALLATION
+Employees are not permitted to install third-party software without approval from the IT Security team. Please use the 'Software Center' app installed on your machine to request new tools.
