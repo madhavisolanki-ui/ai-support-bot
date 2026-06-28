@@ -29,8 +29,8 @@ if "query_count" not in st.session_state: st.session_state.query_count = 0
 def get_engine():
     try:
         index = get_index()
-        # Use chat_engine for better conversational memory
-        return index.as_chat_engine(chat_mode="context", llm=Settings.llm) if index else None
+        system_prompt = "You are a professional Enterprise IT Support assistant. Only answer questions related to company policies and IT procedures. If a question is off-topic, politely decline."
+        return index.as_chat_engine(chat_mode="context", llm=Settings.llm, system_prompt=system_prompt) if index else None
     except Exception as e:
         logger.error(f"Engine Init Error: {e}")
         return None
