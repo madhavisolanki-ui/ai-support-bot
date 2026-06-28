@@ -1,0 +1,25 @@
+PROJECT MANAGEMENT & COLLABORATION GUIDELINES (Doc ID: PM-2026-001)
+1. COMMUNICATION PROTOCOLS
+Authorized Channels: All official project discussions must be conducted exclusively on Slack.
+
+Prohibited Channels: The use of personal WhatsApp or Telegram for company-related project communication is strictly prohibited.
+
+2. DOCUMENTATION STANDARDS
+Storage: All Product Requirement Documents (PRDs) are required to be stored in the designated "Company Confluence" space.
+
+Approval Workflow: Every PRD must undergo a mandatory review by the Technical Lead before the development phase commences.
+
+3. SPRINT & MEETING SCHEDULE
+Cycle Structure: The organization adheres to a standard 2-week Sprint cycle.
+
+Stand-up Meetings: Daily stand-up meetings are held promptly at 10:00 AM via Google Meet.
+
+4. CODE QUALITY & PEER REVIEW
+Review Process: All code modifications are subject to a mandatory peer review process hosted on GitHub.
+
+Merge Requirements: A minimum of 2 peer approvals is required before any code can be merged into the main production branch.
+
+5. DATA PRIVACY & SECURITY
+Encryption Standards: All customer data must be encrypted both at rest and in transit.
+
+Environment Isolation: The use of production-grade data within staging or development environments is strictly forbidden.

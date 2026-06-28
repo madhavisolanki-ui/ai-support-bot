@@ -1,0 +1,41 @@
+Yeh raha aapka UNIFIED IT SUPPORT POLICY & HANDBOOK (Version 2.0) ek dum clean aur structured format mein. Aap ise data/IT_Policy/it_support.txt mein save kar sakte hain:
+
+UNIFIED IT SUPPORT POLICY & HANDBOOK (Version 2.0)
+1. NETWORK & CONNECTIVITY
+Office Wi-Fi:
+
+Primary (Corporate): "Corporate_Secure" | Password: "ConnectSecure2026!"
+
+Guest Wi-Fi: "Office_Guest" | Password: "GuestAccess123!"
+
+Troubleshooting: If unable to connect, ensure VPN is disconnected before joining the Wi-Fi.
+
+Remote Work: All remote access to internal servers requires the "GlobalProtect" VPN with multi-factor authentication (MFA).
+
+2. HARDWARE & EQUIPMENT
+Request Process: Submit a hardware ticket via the Internal Helpdesk Portal (http://itportal.company.local).
+
+Turnaround Time:
+
+Standard requests: 3-5 business days.
+
+Malfunction replacements: Typically within 24 hours.
+
+3. SOFTWARE & SECURITY
+Installations: Unauthorized third-party software installation is strictly prohibited and leads to account suspension. Use the 'Software Center' app to request tools.
+
+Data Security:
+
+Do not store sensitive company data on personal cloud storage (e.g., personal Google Drive/Dropbox).
+
+Never share login credentials.
+
+Security Breach: Email the IT Security Team at security@company.com immediately.
+
+4. ACCESS & ACCOUNT SUPPORT
+Password Reset: Use the 'Forgot Password' link on the login page. If not received within 10 minutes, email it-support@example.com.
+
+5. SUPPORT AVAILABILITY
+Standard Hours: 09:00 AM – 06:00 PM IST (Monday – Friday).
+
+Emergency Helpline: +91-9876543210 (Available for urgent issues outside of standard hours).
