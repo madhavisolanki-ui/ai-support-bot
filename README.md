@@ -41,9 +41,9 @@ ai-support-bot/
 │ README.md
 
 ├── data/
-│   ├── company_policy.pdf
-│   ├── employee_handbook.pdf
-│   └── leave_policy.pdf
+│   ├── hr_policy.txt
+│   ├── project_mng.txt
+│   └── it_policy.txt
 ```
 
 ---
