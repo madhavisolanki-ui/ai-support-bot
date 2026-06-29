@@ -1,110 +1,116 @@
-# 🤖 IT Support AI
+# AI Support Bot
 
-An AI-powered IT Support chatbot built using Streamlit, LlamaIndex, HuggingFace Embeddings, and Groq API.
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-red.svg)](https://streamlit.io/)
+[![LlamaIndex](https://img.shields.io/badge/LlamaIndex-RAG-6f42c1.svg)](https://www.llamaindex.ai/)
+[![Groq](https://img.shields.io/badge/Groq-LLM-black.svg)](https://groq.com/)
 
-The chatbot allows users to ask questions about company policies, documents, and procedures by retrieving information from uploaded documents.
+An AI-powered internal support chatbot that answers company IT and policy questions using a retrieval-augmented generation workflow.
+It uses Streamlit for the UI, LlamaIndex for document retrieval, Hugging Face embeddings for semantic search, and Groq for fast LLM responses.
 
----
+## Features
 
-## 🚀 Features
+- Chat-style Streamlit interface
+- Answers grounded in local knowledge-base documents
+- Semantic search over internal text files
+- Streaming responses for a smoother user experience
+- Source document references in answers
+- Clean sidebar with quick actions and usage guidance
+- Polished, corporate-style interface
 
-- 📄 Document-based Question Answering
-- 🔍 Semantic Search using Embeddings
-- 🤖 AI-generated responses
-- 💬 Chat Interface
-- 🧠 Retrieval-Augmented Generation (RAG)
-- ⚡ Fast inference with Groq API
-- 📂 Supports multiple documents
-
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Python
 - Streamlit
 - LlamaIndex
 - Groq API
-- HuggingFace Embeddings
+- Hugging Face embeddings
 - python-dotenv
 
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```text
 ai-support-bot/
-
-│ app.py
-│ engine.py
-│ .env
-│ requirements.txt
-│ README.md
-
-├── data/
-│   ├── hr_policy.txt
-│   ├── project_mng.txt
-│   └── it_policy.txt
+|-- app.py
+|-- engine.py
+|-- requirements.txt
+|-- README.md
+|-- .env
+|-- data/
+|   |-- hr_policy.txt
+|   |-- it_policy.txt
+|   |-- project_mng.txt
+|-- storage/
 ```
 
----
+## Screenshots
 
-## ⚙️ How It Works
+Add your app screenshots here before publishing on GitHub.
 
-### Step 1: Load Documents
-
-Documents are stored inside the `data/` folder.
-
-### Step 2: Create Embeddings
-
-The application converts documents into vector embeddings using:
-
-```python
-BAAI/bge-small-en-v1.5
+```text
+assets/
+|-- screenshot-home.png
+|-- screenshot-chat.png
 ```
-
-### Step 3: Build Vector Index
-
-LlamaIndex creates a searchable vector index.
-
-### Step 4: User Asks a Question
 
 Example:
 
+```md
+![Home view](assets/screenshot-home.png)
 ```
-How do I reset my password?
+
+## How It Works
+
+1. Documents inside the `data/` folder are loaded.
+2. The text is converted into embeddings using `BAAI/bge-small-en-v1.5`.
+3. LlamaIndex builds or loads a vector index from `storage/`.
+4. When a user asks a question, the most relevant chunks are retrieved.
+5. Groq generates a response based on the retrieved context.
+6. The app shows the source documents used for the answer.
+
+## Requirements
+
+- Python 3.10 or later
+- `GROQ_API_KEY` in a `.env` file
+- Internet access for the first embedding model download
+- Documents in the `data/` folder
+
+## API Setup
+
+### Groq API
+
+1. Create or sign in to your Groq account.
+2. Generate an API key from your Groq dashboard.
+3. Add the key to `.env`:
+
+```env
+GROQ_API_KEY=your_groq_api_key_here
 ```
 
-### Step 5: Retrieve Relevant Information
+### Optional Model Setting
 
-The system searches the most relevant document chunks.
+You can override the default model by setting:
 
-### Step 6: Generate Response
+```env
+LLM_MODEL=llama-3.3-70b-versatile
+```
 
-The Groq LLM generates an answer based on the retrieved information.
+## Installation
 
----
-
-## ▶️ Installation
-
-Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/ai-support-bot.git
-```
-
-Move to the project folder:
-
-```bash
 cd ai-support-bot
 ```
 
-Create a virtual environment:
+### 2. Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate environment:
+### 3. Activate the virtual environment
 
 Windows:
 
@@ -112,80 +118,63 @@ Windows:
 venv\Scripts\activate
 ```
 
-Install dependencies:
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
+## Environment Variables
 
-## 🔐 Environment Variables
-
-Create a `.env` file.
+Create a `.env` file in the project root and add:
 
 ```env
-GROQ_API_KEY=your_api_key_here
+GROQ_API_KEY=your_groq_api_key_here
+LLM_MODEL=llama-3.3-70b-versatile
 ```
 
----
+Keep `.env` private and never commit real API keys to version control.
 
-## ▶️ Run Application
+## Run the App
 
 ```bash
 streamlit run app.py
 ```
 
----
-
-## 💡 Example Questions
+## Example Questions
 
 - How do I reset my password?
-- What is the leave policy?
-- What are office timings?
-- How do I contact HR?
-- What are the company holidays?
+- What is the VPN request process?
+- Where can I find the leave policy?
 - What is the reimbursement process?
+- How do I contact HR?
 
----
+## Troubleshooting
 
-## 🧠 Architecture
+- If the app says the support engine is not ready, check that `GROQ_API_KEY` is set correctly.
+- If the knowledge base is empty, make sure there are text files inside the `data/` folder.
+- If embeddings fail to load the first time, check your internet connection.
+- If you change documents in `data/`, delete the `storage/` folder so the index can rebuild.
 
-```text
-Documents
-   ↓
-
-LlamaIndex
-   ↓
-
-Embeddings
-   ↓
-
-Vector Store
-   ↓
-
-Retriever
-   ↓
-
-Groq LLM
-   ↓
-
-Response
-```
-
----
-
-## 📌 Future Improvements
+## Future Improvements
 
 - File upload support
-- Multi-user authentication
-- Chat export
-- Source citations
 - Conversation memory
+- Authentication for multiple users
+- Better source citations
+- Chat export
 
----
+## License
 
-## 👩‍💻 Author
+This project is currently unlicensed.
+
+If you plan to publish it publicly, add a license file such as:
+
+- MIT License
+- Apache 2.0
+- BSD 3-Clause
+
+## Author
 
 Madhavi Solanki
 
