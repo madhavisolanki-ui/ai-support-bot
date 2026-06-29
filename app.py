@@ -207,26 +207,42 @@ st.markdown(
             color: rgba(226, 232, 240, 0.86) !important;
         }
 
-        .quick-action-row button {
-            width: 100%;
-            border-radius: 999px;
-            border: 1px solid rgba(37, 99, 235, 0.18);
-            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-            color: #0f172a;
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
-        }
-
-        .quick-action-row button:hover {
-            border-color: rgba(37, 99, 235, 0.34);
-            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.10);
-        }
-
         .quick-actions-title {
             margin: 0.2rem 0 0.6rem 0;
             font-size: 0.92rem;
             font-weight: 700;
             color: #334155;
             letter-spacing: 0.02em;
+        }
+
+        div[data-testid="stButton"] > button {
+            border-radius: 14px;
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            color: #0f172a;
+            font-weight: 600;
+            min-height: 3.1rem;
+            padding: 0.65rem 0.9rem;
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+        }
+
+        div[data-testid="stButton"] > button:hover {
+            border-color: rgba(37, 99, 235, 0.40);
+            box-shadow: 0 10px 22px rgba(37, 99, 235, 0.08);
+            transform: translateY(-1px);
+        }
+
+        [data-testid="stSidebar"] div[data-testid="stButton"] > button {
+            width: 100%;
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+            color: #f8fafc !important;
+            border: 1px solid rgba(148, 163, 184, 0.24);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        [data-testid="stSidebar"] div[data-testid="stButton"] > button:hover {
+            border-color: rgba(96, 165, 250, 0.45);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
         }
     </style>
     """,
@@ -271,7 +287,7 @@ with st.sidebar:
         unsafe_allow_html=True,
     )
 
-    if st.button("Reset conversation"):
+    if st.button("Reset conversation", use_container_width=True):
         st.session_state.messages = []
         st.session_state.pending_prompt = None
         st.rerun()
@@ -317,14 +333,18 @@ with left:
 
         st.markdown('<div style="height:0.4rem;"></div>', unsafe_allow_html=True)
         st.markdown('<div class="quick-actions-title">Quick actions</div>', unsafe_allow_html=True)
-        quick_cols = st.columns(len(QUICK_ACTIONS))
-        for idx, action in enumerate(QUICK_ACTIONS):
-            with quick_cols[idx]:
-                st.markdown('<div class="quick-action-row">', unsafe_allow_html=True)
-                if st.button(action, key=f"quick_action_{idx}"):
-                    st.session_state.pending_prompt = action
-                    st.rerun()
-                st.markdown("</div>", unsafe_allow_html=True)
+        quick_top_left, quick_top_right = st.columns(2)
+        with quick_top_left:
+            if st.button(QUICK_ACTIONS[0], key="quick_action_0", use_container_width=True):
+                st.session_state.pending_prompt = QUICK_ACTIONS[0]
+                st.rerun()
+        with quick_top_right:
+            if st.button(QUICK_ACTIONS[1], key="quick_action_1", use_container_width=True):
+                st.session_state.pending_prompt = QUICK_ACTIONS[1]
+                st.rerun()
+        if st.button(QUICK_ACTIONS[2], key="quick_action_2", use_container_width=True):
+            st.session_state.pending_prompt = QUICK_ACTIONS[2]
+            st.rerun()
 
     for msg in st.session_state.messages:
         with st.chat_message(msg["role"]):
