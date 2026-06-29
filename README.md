@@ -37,16 +37,19 @@ It uses Streamlit for the UI, LlamaIndex for document retrieval, Hugging Face em
 
 ```text
 ai-support-bot/
-|-- app.py
-|-- engine.py
-|-- requirements.txt
-|-- README.md
-|-- .env
-|-- data/
-|   |-- hr_policy.txt
-|   |-- it_policy.txt
-|   |-- project_mng.txt
-|-- storage/
+├── app.py
+├── check_models.py
+├── engine.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+├── .gitignore
+├── assets/
+├── data/
+│   ├── hr_policy.txt
+│   ├── it_policy.txt
+│   └── project_mng.txt
+└── .devcontainer/
 ```
 
 ## Screenshots
