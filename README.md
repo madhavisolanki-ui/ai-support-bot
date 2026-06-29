@@ -62,7 +62,7 @@ assets/
 Example:
 
 ```md
-![Home view](assets/screenshot-home.png)
+![Home view](assets\ss1.png)
 ```
 
 ## Architecture
