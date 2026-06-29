@@ -44,12 +44,12 @@ ai-support-bot/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
+├── .devcontainer/
 ├── assets/
-├── data/
-│   ├── hr_policy.txt
-│   ├── it_policy.txt
-│   └── project_mng.txt
-└── .devcontainer/
+└── data/
+    ├── hr_policy.txt
+    ├── it_policy.txt
+    └── project_mng.txt
 ```
 
 ## Screenshots
