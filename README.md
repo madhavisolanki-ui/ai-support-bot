@@ -51,19 +51,9 @@ ai-support-bot/
 
 ## Screenshots
 
-Add your app screenshots here before publishing on GitHub.
+![Image 1](assets/ss1.png)
+![Image 2](assets/ss2.png)
 
-```text
-assets/
-|-- screenshot-home.png
-|-- screenshot-chat.png
-```
-
-Example:
-
-```md
-![Home view](assets\ss1.png)
-```
 
 ## Architecture
 
