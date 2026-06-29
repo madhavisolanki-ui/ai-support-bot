@@ -4,6 +4,10 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-App-red.svg)](https://streamlit.io/)
 [![LlamaIndex](https://img.shields.io/badge/LlamaIndex-RAG-6f42c1.svg)](https://www.llamaindex.ai/)
 [![Groq](https://img.shields.io/badge/Groq-LLM-black.svg)](https://groq.com/)
+[![GitHub stars](https://img.shields.io/github/stars/madhavisolanki-ui/ai-support-bot?style=flat-square)](https://github.com/madhavisolanki-ui/ai-support-bot/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/madhavisolanki-ui/ai-support-bot?style=flat-square)](https://github.com/madhavisolanki-ui/ai-support-bot/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/madhavisolanki-ui/ai-support-bot?style=flat-square)](https://github.com/madhavisolanki-ui/ai-support-bot/issues)
+[![License](https://img.shields.io/github/license/madhavisolanki-ui/ai-support-bot?style=flat-square)](https://github.com/madhavisolanki-ui/ai-support-bot/blob/main/LICENSE)
 
 An AI-powered internal support chatbot that answers company IT and policy questions using a retrieval-augmented generation workflow.
 It uses Streamlit for the UI, LlamaIndex for document retrieval, Hugging Face embeddings for semantic search, and Groq for fast LLM responses.
@@ -59,6 +63,18 @@ Example:
 ![Home view](assets/screenshot-home.png)
 ```
 
+## Architecture
+
+```mermaid
+flowchart TD
+    A[User question] --> B[Streamlit UI]
+    B --> C[LlamaIndex chat engine]
+    C --> D[Retrieve relevant chunks from data/]
+    D --> E[Groq LLM]
+    E --> F[Answer with source references]
+    F --> B
+```
+
 ## How It Works
 
 1. Documents inside the `data/` folder are loaded.
@@ -100,7 +116,7 @@ LLM_MODEL=llama-3.3-70b-versatile
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ai-support-bot.git
+git clone https://github.com/madhavisolanki-ui/ai-support-bot.git
 cd ai-support-bot
 ```
 
@@ -166,13 +182,7 @@ streamlit run app.py
 
 ## License
 
-This project is currently unlicensed.
-
-If you plan to publish it publicly, add a license file such as:
-
-- MIT License
-- Apache 2.0
-- BSD 3-Clause
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Author
 
