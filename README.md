@@ -180,6 +180,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 Madhavi Solanki
 
-B.Tech CSE Student
-
-AI | Data Science | Generative AI
